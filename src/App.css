@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+/* App.css or background.css */
+
+/* Set the global background image */
+body {
+  background-image: url('/path/to/your/background-image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* Ensures the background covers the whole viewport */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Default overlay for non-home pages */
+.page-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* A semi-transparent black overlay */
+  z-index: -1; /* Behind the content */
+}
+
+.page-container {
+  position: relative;
+  z-index: 1; /* Above the overlay */
+  padding: 20px;
+  color: white; /* Make text readable on dark background */
+}

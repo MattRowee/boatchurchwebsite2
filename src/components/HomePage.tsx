@@ -17,7 +17,6 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
   };
 
   return (
-    <div className="background">
       <div className="overlay">
         <img src="/bcmothlogowhite.png" alt="Logo" className="overlay_image" />
         <h1>Boat Church loves you</h1>
@@ -48,7 +47,6 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
           <h2>Welcome, Admin!</h2>
         )}
       </div>
-    </div>
   );
 };
 
