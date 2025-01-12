@@ -19,16 +19,102 @@
     background-position: center;
     color: white;
     text-align: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */
   }
   
-  .overlay {
+  .container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
   
   .overlay_image {
     width: 400px;
     height: 400px;
+  }
+
+  .loginForm {
+    border-radius: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  .loginFormContainer {
+    padding: 10px 20px;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 15px;
+    border: 2px transparent;
+    border-radius: 12px;
+    align-self: center;
+  }
+
+  .headerMessage {
+    width: 100px;
+    align-self: center;
+    text-align: left;
+  }
+
+  .loginForm input{
+    width: 100%;
+    height: 56px;
+    padding: 0px 16px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.8);
+    outline: none;
+    box-shadow: 0px 4px 20px 0px transparent;
+    transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+    -webkit-appearance: none;
+  }
+  .loginForm input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .loginForm input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .loginForm input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .loginForm input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .loginFormButton {
+    width: 100px;
+    height: 40px;
+    padding: 0px 16px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.4);
+    outline: none;
+    box-shadow: 0px 4px 20px 0px transparent;
+    transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+    -webkit-appearance: none;
+  }
+
+  .loginFormButton:hover{
+    transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.3s color ease-in-out, 0.3s border ease-in-out;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid pink;
   }

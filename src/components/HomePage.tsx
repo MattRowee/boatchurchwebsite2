@@ -17,16 +17,15 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
   };
 
   return (
-      <div className="overlay">
+      <div className="container">
         <img src="/bcmothlogowhite.png" alt="Logo" className="overlay_image" />
-        <h1>Boat Church loves you</h1>
-        <p>Full website coming soon.</p>
+        <h1 className="headerMessage">Boat Church loves you</h1>
         {/* Admin login form */}
         {!isAuthenticated ? (
-          <div>
+          <div className="loginFormContainer">
             <h2>Admin Login</h2>
-            <form onSubmit={handleSubmit}>
-              <input
+            <form className="loginForm" onSubmit={handleSubmit}>
+              <input 
                 type="text"
                 placeholder="Username"
                 value={username}
@@ -40,12 +39,13 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-              <button type="submit">Login</button>
+              <button className="loginFormButton" type="submit">Login</button>
             </form>
           </div>
         ) : (
           <h2>Welcome, Admin!</h2>
         )}
+        <p>**Full website coming soon.**</p>
       </div>
   );
 };
