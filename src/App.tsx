@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Dropdown from "./components/Dropdown";
 import HomePage from "./components/HomePage";
 import Merch from "./components/Merch";
@@ -12,11 +12,13 @@ const App: React.FC = () => {
 
   // Handle Admin Login
   const handleLogin = async (username: string, password: string) => {
+    console.log("username, password", username, password);
     try {
       const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password }),
+        // credentials: 'include',  
       });
 
       if (response.ok) {
@@ -25,6 +27,7 @@ const App: React.FC = () => {
         alert('Invalid credentials');
       }
     } catch (error) {
+      console.log("error:", error)
       alert('Login failed');
     }
   };
