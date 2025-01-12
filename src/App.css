@@ -41,7 +41,7 @@
 
 /* Set the global background image */
 body {
-  background-image: url('/path/to/your/background-image.jpg');
+  /* background-image: url('/path/to/your/background-image.jpg'); */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -59,13 +59,13 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8); /* A semi-transparent black overlay */
+  background-color: rgba(0, 0, 0, 0.4); /* A semi-transparent black overlay */
   z-index: -1; /* Behind the content */
 }
 
 .page-container {
-  position: relative;
   z-index: 1; /* Above the overlay */
   padding: 20px;
   color: white; /* Make text readable on dark background */
+  display: flex;
 }

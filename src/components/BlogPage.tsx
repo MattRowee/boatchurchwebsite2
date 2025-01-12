@@ -24,7 +24,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ isAdmin }) => {
   };
 
   return (
-    <div>
+    <div className="overlay">
       <h2>Blog</h2>
       {isAdmin && (
         <div>

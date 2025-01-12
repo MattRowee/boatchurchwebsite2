@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "./components/Dropdown";
 import HomePage from "./components/HomePage";
 import Merch from "./components/Merch";
 import BlogPage from "./components/BlogPage";
+import "./App.css";
 
 const App: React.FC = () => {
 
   const [isAdmin, setIsAdmin] = useState(false);
   const location = useLocation(); // Hook to get the current path
-
+  const navigate = useNavigate();
   // Handle Admin Login
   const handleLogin = async (username: string, password: string) => {
-    console.log("username, password", username, password);
     try {
       const response = await fetch('http://localhost:5000/login', {
         method: 'POST',
@@ -31,14 +31,20 @@ const App: React.FC = () => {
       alert('Login failed');
     }
   };
+  
+  useEffect(() => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+  }, []);
 
   return (
-      <div className={location.pathname === "/" ? "background" : "background transparent"}>
+      <div className="background">
         {/* Transparent overlay for non-homepage pages */}
         {location.pathname !== "/" && <div className="page-overlay"></div>}
 
-        <div className="page-container">
-          <nav style={{ zIndex: "10", top: "10px", left: "10px" }}>
+        <div className={location.pathname === "/" ? "page-container" : "page-container page-overlay"}>
+          <nav style={{ zIndex: "10", top: "10px", left: "10px", margin: "15px" }}>
             <Dropdown />
           </nav>
           <Routes>
