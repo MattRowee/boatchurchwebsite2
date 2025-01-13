@@ -14,7 +14,7 @@
   .background {
     position: relative;
     height: 100vh;
-    background-image: url('../../public/bcqp.jpg'); /* Replace with your image path */
+    background-image: url('../../../public/bcqp.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     color: white;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import Dropdown from "./components/Dropdown";
-import HomePage from "./components/HomePage";
-import Merch from "./components/Merch";
-import BlogPage from "./components/BlogPage";
+import Nav from "./components/Nav/Nav";
+import HomePage from "./components/Home/HomePage";
+import Merch from "./components/Merch/Merch";
+import BlogPage from "./components/Blog/BlogPage";
 import "./App.css";
 
 const App: React.FC = () => {
@@ -31,7 +31,7 @@ const App: React.FC = () => {
       alert('Login failed');
     }
   };
-  
+
   useEffect(() => {
     if (location.pathname !== "/") {
       navigate("/");
@@ -39,21 +39,18 @@ const App: React.FC = () => {
   }, []);
 
   return (
-      <div className="background">
-        {/* Transparent overlay for non-homepage pages */}
-        {location.pathname !== "/" && <div className="page-overlay"></div>}
-
-        <div className={location.pathname === "/" ? "page-container" : "page-container page-overlay"}>
-          <nav style={{ zIndex: "10", top: "10px", left: "10px", margin: "15px" }}>
-            <Dropdown />
-          </nav>
-          <Routes>
-            <Route path="/" element={<HomePage onLogin={handleLogin} isAuthenticated={isAdmin} />} />
-            <Route path="/Merch" element={<Merch />} />
-            <Route path="/Blog" element={<BlogPage isAdmin={isAdmin} />} />
-          </Routes>
-        </div>
+    <div className="background">
+      {/* Transparent overlay for non-homepage pages */}
+        <Nav />
+      {location.pathname !== "/" && <div className="page-overlay"></div>}
+      <div className="page-container">
+        <Routes>
+          <Route path="/" element={<HomePage onLogin={handleLogin} isAuthenticated={isAdmin} />} />
+          <Route path="/Merch" element={<Merch />} />
+          <Route path="/Blog" element={<BlogPage isAdmin={isAdmin} />} />
+        </Routes>
       </div>
+    </div>
   );
 };
 

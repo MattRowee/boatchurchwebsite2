@@ -19,7 +19,6 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
   return (
       <div className="container">
         <img src="/bcmothlogowhite.png" alt="Logo" className="overlay_image" />
-        <h1 className="headerMessage">Boat Church loves you</h1>
         {/* Admin login form */}
         {!isAuthenticated ? (
           <div className="loginFormContainer">
@@ -45,7 +44,7 @@ const HomePage: React.FC<HomePageProps> = ({ onLogin, isAuthenticated }) => {
         ) : (
           <h2>Welcome, Admin!</h2>
         )}
-        <p>**Full website coming soon.**</p>
+        <p>**WIP**</p>
       </div>
   );
 };
