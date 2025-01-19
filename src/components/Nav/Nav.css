@@ -27,5 +27,16 @@
 .linksContainer {
     display: flex;
     flex-direction: row;
-}
 
+    a {
+        font-size: 20px;
+        font-weight: 400;
+        text-decoration: none;
+        padding: 5px;
+        color: aliceblue;
+    }
+
+    a:hover {
+        color: pink;
+    }
+}

@@ -44,7 +44,6 @@ const Login: React.FC<LoginProps> = ({ onLogin, isAuthenticated }) => {
         ) : (
           <h2>Welcome Back!</h2>
         )}
-        <p>**WIP**</p>
       </div>
   );
 };
