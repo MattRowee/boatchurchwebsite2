@@ -1,35 +1,31 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./Nav.css";
 
 const Nav: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleNavigation = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    navigate(event.target.value);
-  };
 
   return (
-    <div className="navContainer">
+    <nav className="navContainer">
       <div className="logoContainer">
         <h1>BC,BABY</h1>
       </div>
       <div className="linksContainer">
-        {/* <select onChange={handleNavigation} defaultValue="/"> */}
         <div>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </div>
         <div>
-
-          <a href="/Merch">Merch</a>
+          <Link to="/Merch">Merch</Link>
         </div>
         <div>
-
-          <a href="/Blog">Blog</a>
+          <Link to="/Blog">Blog</Link>
         </div>
-        {/* </select> */}
+        <div>
+          <Link to="/Login">Login</Link>
+        </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -4,6 +4,7 @@ import Nav from "./components/Nav/Nav";
 import HomePage from "./components/Home/HomePage";
 import Merch from "./components/Merch/Merch";
 import BlogPage from "./components/Blog/BlogPage";
+import Login from "./components/Login/Login"
 import "./App.css";
 
 const App: React.FC = () => {
@@ -45,9 +46,10 @@ const App: React.FC = () => {
       {location.pathname !== "/" && <div className="page-overlay"></div>}
       <div className="page-container">
         <Routes>
-          <Route path="/" element={<HomePage onLogin={handleLogin} isAuthenticated={isAdmin} />} />
+          <Route path="/" element={<HomePage isAuthenticated={isAdmin} />} />
           <Route path="/Merch" element={<Merch />} />
           <Route path="/Blog" element={<BlogPage isAdmin={isAdmin} />} />
+          <Route path="/Login" element={<Login onLogin={handleLogin} isAuthenticated={isAdmin}/>} />
         </Routes>
       </div>
     </div>
